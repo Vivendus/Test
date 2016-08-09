@@ -1,48 +1,44 @@
-# File:  tc_even_numbers_sum.rb
+# File:  tc_even_numbers_adder.rb
 
-require_relative "even_numbers_sum.rb"
+require_relative "even_numbers_adder.rb"
 require "test/unit"
 
-class TestEvenNumbersSum < Test::Unit::TestCase
+class TestEvenNumbersAdder < Test::Unit::TestCase
 	
-	def test_empty
+	def test_empty		
+		even_numbers_adder = EvenNumbersAdder.new
+		numbers = []
 		
-		even_numbers_sum = EvenNumbersSum.new
-		numbers = Array[]
-		
-		sum_of_even_numbers = even_numbers_sum.get_sum_of_even_numbers(numbers)		
+		returnedSum = even_numbers_adder.add(numbers)		
 	
-		assert_equal(0, sum_of_even_numbers)
+		assert_equal(0, returnedSum)
 	end
 	
-	def test_even_numbers
+	def test_even_numbers		
+		even_numbers_adder = EvenNumbersAdder.new
+		numbers = [10,22,32,40,82]
 		
-		even_numbers_sum = EvenNumbersSum.new
-		numbers = Array[10,22,32,40,82]
-		
-		sum_of_even_numbers = even_numbers_sum.get_sum_of_even_numbers(numbers)		
+		returnedSum = even_numbers_adder.add(numbers)		
 	
-		assert_equal(186, sum_of_even_numbers)
+		assert_equal(186, returnedSum)
 	end
 
 	
-	def test_no_even_numbers
+	def test_no_even_numbers		
+		even_numbers_adder = EvenNumbersAdder.new
+		numbers = [5,15,7,13,11]
 		
-		even_numbers_sum = EvenNumbersSum.new
-		numbers = Array[5,15,7,13,11]
-		
-		sum_of_even_numbers = even_numbers_sum.get_sum_of_even_numbers(numbers)		
+		returnedSum = even_numbers_adder.add(numbers)		
 	
-		assert_equal(0, sum_of_even_numbers)
+		assert_equal(0, returnedSum)
 	end
 	
-	def test_combined_even_numbers
+	def test_combined_even_numbers		
+		even_numbers_adder = EvenNumbersAdder.new
+		numbers = [5,10,40,13,11,22,82]
 		
-		even_numbers_sum = EvenNumbersSum.new
-		numbers = Array[5,10,40,13,11,22,82]
-		
-		sum_of_even_numbers = even_numbers_sum.get_sum_of_even_numbers(numbers)		
+		returnedSum = even_numbers_adder.add(numbers)		
 	
-		assert_equal(154, sum_of_even_numbers)
+		assert_equal(154, returnedSum)
 	end
 end

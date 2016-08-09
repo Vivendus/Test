@@ -1,32 +1,29 @@
 # File: largest_two_numbers.rb
 
 class LargestTwoNumbers
-	def get_largest_two_numbers(numbers)
-	
+	def get_numbers(numbers)	
 		if numbers.length < 2
 			raise "Array of length too small, min 2!"
 		end
 
-		firstLargeNumber = numbers[0]
-		secondLargeNumber = numbers[1]
+		first_large_number = numbers[0]
+		second_large_number = numbers[1]
 		
-		if firstLargeNumber < secondLargeNumber 		
-			firstLargeNumber, secondLargeNumber = secondLargeNumber, firstLargeNumber
+		if first_large_number < second_large_number 		
+			first_large_number, second_large_number = second_large_number, first_large_number
 		end
 		
-		for index in 2..numbers.length - 1
-			if numbers[index] > firstLargeNumber 
-			
-				secondLargeNumber = firstLargeNumber
-				firstLargeNumber = numbers[index]
-		
+		numbers[2..-1].each do |number|
+			if number > first_large_number 				
+				second_large_number = first_large_number
+				first_large_number = number			
 			else 
-				if numbers[index] > secondLargeNumber			
-					secondLargeNumber = numbers[index]
+				if number > second_large_number && number != first_large_number		
+						second_large_number = number
 				end
 			end
-		end	
-		
-		return firstLargeNumber, secondLargeNumber		
+		end
+
+		return first_large_number, second_large_number		
 	end
 end
