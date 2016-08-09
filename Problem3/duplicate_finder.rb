@@ -4,7 +4,7 @@ class DuplicateFinder
   def has_duplicates(numbers)	
     numbers.each do |number|					
       if numbers[number.abs - 1] > 0 then
-         numbers[number.abs - 1] *= -1
+        numbers[number.abs - 1] *= -1
       else
         return true
       end
