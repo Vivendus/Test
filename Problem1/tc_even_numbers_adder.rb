@@ -6,11 +6,11 @@ require "test/unit"
 class TestEvenNumbersAdder < Test::Unit::TestCase
   def test_empty		
     even_numbers_adder = EvenNumbersAdder.new
-	  numbers = []
+	numbers = []
 		
-	  returnedSum = even_numbers_adder.add(numbers)		
+	returnedSum = even_numbers_adder.add(numbers)		
 	
-	  assert_equal(0, returnedSum)
+	assert_equal(0, returnedSum)
   end
 	
   def test_even_numbers		
