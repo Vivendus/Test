@@ -2,6 +2,6 @@
 
 class EvenNumbersAdder
   def add(numbers)	
-    numbers.find_all(&:even?).reduce(:+).to_i
+    numbers.find_all(&:even?).reduce(:+) || 0
   end	
 end
